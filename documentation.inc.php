@@ -74,7 +74,7 @@ foreach ($docs as $id => $rubrik) {
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, True);
             $project_infos = json_decode(curl_exec($ch));
             curl_close($ch);
-            var_dump($project_infos);
+            //var_dump($project_infos);
 
             // Récupération des infos sur les différentes versions du projet 
             // su ReadTheDocs.org

@@ -18,7 +18,7 @@ $page->start_display();
 //
 include "documentation.inc.php";
 //
-foreach($docs as $id => $rubrik) {
+foreach ($docs as $id => $rubrik) {
     //
     echo "<div>";
     //
@@ -98,7 +98,7 @@ foreach($docs as $id => $rubrik) {
                 //
                 if (!isset($rubrik["versions"]) || (isset($rubrik["versions"]) &&  $rubrik["versions"] != false)) {
                     echo "<td>";
-                    echo $version["folder"];
+                    echo $version["title"];
                     if ($version["folder"] == "trunk") {
                         echo " <i title=\"Documentation de la version en cours de développement (non publiée)\" class=\"icon-question-sign cursor-help\"></i>";
                     }
@@ -110,9 +110,12 @@ foreach($docs as $id => $rubrik) {
                     echo "-";
                 } else {
                     foreach ($version["formats"] as $format) {
+                        //
                         echo "<a target=\"_blank\" href=\"";
                         if (isset($format["file"]) && file_exists($format["file"])) {
                             echo $format["file"];
+                        } elseif (isset($format["url"])) {
+                            echo $format["url"];
                         } else {
                             echo $format["path"];
                         }

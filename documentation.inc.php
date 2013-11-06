@@ -12,8 +12,10 @@ $docs["applications"] = array(
     "title" => "Applications",
     "apps" => array(
         array(
-            "title" => "openADS (anciennement openFoncier)",
-            "folder" => "openfoncier",
+            "id" => "openads",
+            "type" => "readthedocs",
+            "source_url" => "https://github.com/openmairie/openads-documentation",
+            "source_type" => "github",
         ),
         array(
             "title" => "openCimetière",
@@ -24,8 +26,10 @@ $docs["applications"] = array(
             "folder" => "opencirculation",
         ),
         array(
-            "title" => "openElec",
-            "folder" => "openelec",
+            "id" => "openelec",
+            "type" => "readthedocs",
+            "source_url" => "https://github.com/openmairie/openelec-documentation",
+            "source_type" => "github",
         ),
         array(
             "title" => "openPersonnalité",
@@ -45,9 +49,15 @@ $docs["framework"] = array(
     ),
 );
 
+/**
+ *
+ */
 // Pour chaque rubrique
 foreach ($docs as $id => $rubrik) {
-    
+
+    // On stocke le path de la rubrique si un dossier est défini
+    // Sinon on part du principe qu'on se trouve dans le dossier
+    // racine    
     $rubrik_path = "";
     if (isset($rubrik["folder"])) {
         $rubrik_path = $rubrik["folder"]."/";
@@ -55,11 +65,89 @@ foreach ($docs as $id => $rubrik) {
 
     // Pour chaque application
     foreach ($rubrik["apps"] as $key => $app) {
-    
+
+        //
+        if (isset($app["type"]) && $app["type"] == "readthedocs") {
+
+            // Récupération des infos sur le projet sur ReadTheDocs.org
+            $ch = curl_init("http://readthedocs.org/api/v1/project/".$app["id"]."/?format=json");
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, True);
+            $project_infos = json_decode(curl_exec($ch));
+            curl_close($ch);
+            var_dump($project_infos);
+
+            // Récupération des infos sur les différentes versions du projet 
+            // su ReadTheDocs.org
+            $ch = curl_init("http://readthedocs.org/api/v1/version/".$app["id"]."/?format=json");
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, True);
+            $project_versions_infos = json_decode(curl_exec($ch));
+            curl_close($ch);
+            //var_dump($project_versions_infos);
+
+            //
+            $docs[$id]["apps"][$key]["title"] = $project_infos->{'description'};
+            $docs[$id]["apps"][$key]["language"] = $project_infos->{'language'};
+            $docs[$id]["apps"][$key]["default_branch"] = $project_infos->{'default_branch'};
+
+            //
+            $versions = array();
+            //
+            foreach ($project_versions_infos->{'objects'} as $value) {
+                //
+                if ($value->{'active'} == '1') {
+                    //
+                    $versions[$value->{'verbose_name'}] = array(
+                        "id" => $value->{'verbose_name'},
+                        "title" => ($value->{'verbose_name'} == "latest" && $project_infos->{'default_branch'} != "" ? $project_infos->{'default_branch'} : $value->{'verbose_name'}),
+                    );
+                }
+            }
+            //
+            $docs[$id]["apps"][$key]["versions"] = array();
+            foreach($versions as $version) {
+                // On stocke son répertoire et son path
+                $docs[$id]["apps"][$key]["versions"][$version["id"]]["title"] = $version["title"];
+                $docs[$id]["apps"][$key]["versions"][$version["id"]]["folder"] = $version["id"];
+                //$docs[$id]["apps"][$key]["versions"][$version]["path"] = $docs[$id]["apps"][$key]["path"].$version."/";
+
+                // On intialise le tableau des versions
+                $docs[$id]["apps"][$key]["versions"][$version["id"]]["formats"] = array();
+
+                //
+                $docs[$id]["apps"][$key]["versions"][$version["id"]]["formats"]["html"] = array();
+                $docs[$id]["apps"][$key]["versions"][$version["id"]]["formats"]["html"]["folder"] = "html";
+                $docs[$id]["apps"][$key]["versions"][$version["id"]]["formats"]["html"]["url"] = "http://docs.openmairie.org/projects/".$app["id"]."/".$docs[$id]["apps"][$key]["language"]."/".$version["id"]."/";
+
+                $docs[$id]["apps"][$key]["versions"][$version["id"]]["formats"]["pdf"] = array();
+                $docs[$id]["apps"][$key]["versions"][$version["id"]]["formats"]["pdf"]["folder"] = "pdf";
+                $docs[$id]["apps"][$key]["versions"][$version["id"]]["formats"]["pdf"]["url"] = "http://media.readthedocs.org/pdf/".$app["id"]."/".$version["id"]."/".$app["id"].".pdf";
+
+                $docs[$id]["apps"][$key]["versions"][$version["id"]]["formats"]["source"] = array();
+                $docs[$id]["apps"][$key]["versions"][$version["id"]]["formats"]["source"]["folder"] = "source";
+                $source_url = "";
+                if ($app["source_type"] == "github") {
+                    //
+                    $version_id = $version["id"];
+                    //
+                    if ($version["id"] == "latest") {
+                        if ($docs[$id]["apps"][$key]["default_branch"] == "") {
+                            $version_id = "master";
+                        } else {
+                            $version_id = $docs[$id]["apps"][$key]["default_branch"];
+                        }
+                    }
+                    $source_url = $app["source_url"]."/tree/".$version_id;
+                }
+                $docs[$id]["apps"][$key]["versions"][$version["id"]]["formats"]["source"]["url"] = $source_url;
+            }
+            //
+            continue;
+        }
+
         // Si le répertoire de la documentation existe bien
         if (is_dir($rubrik_path.$app["folder"])) {
 
-            // on initialise le path de l'application
+            // On stocke le path de l'application 
             $docs[$id]["apps"][$key]["path"] = $rubrik_path.$app["folder"]."/";
 
             // On intialise le tableau des versions
@@ -83,6 +171,7 @@ foreach ($docs as $id => $rubrik) {
 
                     // On stocke son répertoire et son path
                     $docs[$id]["apps"][$key]["versions"][$version]["folder"] = $version;
+                    $docs[$id]["apps"][$key]["versions"][$version]["title"] = $version;
                     $docs[$id]["apps"][$key]["versions"][$version]["path"] = $docs[$id]["apps"][$key]["path"].$version."/";
 
                     // On intialise le tableau des versions

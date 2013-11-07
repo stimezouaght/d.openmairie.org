@@ -99,7 +99,7 @@ foreach ($docs as $id => $rubrik) {
                 if (!isset($rubrik["versions"]) || (isset($rubrik["versions"]) &&  $rubrik["versions"] != false)) {
                     echo "<td>";
                     echo $version["title"];
-                    if ($version["folder"] == "trunk") {
+                    if ($version["title"] == "trunk" || $version["title"] == "latest") {
                         echo " <i title=\"Documentation de la version en cours de développement (non publiée)\" class=\"icon-question-sign cursor-help\"></i>";
                     }
                     echo "</td>";

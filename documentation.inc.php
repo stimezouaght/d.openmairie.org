@@ -18,12 +18,26 @@ $docs["applications"] = array(
             "source_type" => "github",
         ),
         array(
-            "title" => "openCimetière",
-            "folder" => "opencimetiere",
+            "id" => "openaria",
+            "type" => "readthedocs",
+            "source_url" => "https://github.com/openmairie/openaria-documentation",
+            "source_type" => "github",
+        ),
+        array(
+            "id" => "opencimetiere",
+            "type" => "readthedocs",
+            "source_url" => "https://github.com/openmairie/opencimetiere-documentation",
+            "source_type" => "github",
         ),
         array(
             "title" => "openCirculation",
             "folder" => "opencirculation",
+        ),
+        array(
+            "id" => "opencourrier",
+            "type" => "readthedocs",
+            "source_url" => "https://github.com/openmairie/opencourrier-documentation",
+            "source_type" => "github",
         ),
         array(
             "id" => "openelec",
@@ -35,6 +49,18 @@ $docs["applications"] = array(
             "title" => "openPersonnalité",
             "folder" => "openpersonnalite",
         ),
+        array(
+            "id" => "openresultat",
+            "type" => "readthedocs",
+            "source_url" => "https://github.com/openmairie/openresultat-documentation",
+            "source_type" => "github",
+        ),
+        array(
+            "id" => "openscrutin",
+            "type" => "readthedocs",
+            "source_url" => "https://github.com/openmairie/openscrutin-documentation",
+            "source_type" => "github",
+        ),
     ),
 );
 
@@ -43,8 +69,10 @@ $docs["framework"] = array(
     "title" => "Framework",
     "apps" => array(
         array(
-            "title" => "Guide du développeur",
-            "folder" => "framework",
+            "id" => "openmairie",
+            "type" => "readthedocs",
+            "source_url" => "https://github.com/openmairie/omframework-documentation",
+            "source_type" => "github",
         ),
     ),
 );
@@ -85,9 +113,16 @@ foreach ($docs as $id => $rubrik) {
             //var_dump($project_versions_infos);
 
             //
-            $docs[$id]["apps"][$key]["title"] = $project_infos->{'description'};
-            $docs[$id]["apps"][$key]["language"] = $project_infos->{'language'};
-            $docs[$id]["apps"][$key]["default_branch"] = $project_infos->{'default_branch'};
+            if ($project_infos != NULL) {
+                $docs[$id]["apps"][$key]["title"] = $project_infos->{'description'};
+                $docs[$id]["apps"][$key]["language"] = $project_infos->{'language'};
+                $docs[$id]["apps"][$key]["default_branch"] = $project_infos->{'default_branch'};
+            } else {
+                $docs[$id]["apps"][$key]["title"] = $app["id"];
+                $docs[$id]["apps"][$key]["language"] = "";
+                $docs[$id]["apps"][$key]["default_branch"] = "";
+            }
+
 
             //
             $versions = array();
@@ -137,6 +172,8 @@ foreach ($docs as $id => $rubrik) {
                         }
                     }
                     $source_url = $app["source_url"]."/tree/".$version_id;
+                } elseif ($app["source_type"] == "adullact") {
+                    $source_url = $app["source_url"];
                 }
                 $docs[$id]["apps"][$key]["versions"][$version["id"]]["formats"]["source"]["url"] = $source_url;
             }

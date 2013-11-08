@@ -69,7 +69,7 @@ $docs["framework"] = array(
     "title" => "Framework",
     "apps" => array(
         array(
-            "id" => "openmairie",
+            "id" => "omframework",
             "type" => "readthedocs",
             "source_url" => "https://github.com/openmairie/omframework-documentation",
             "source_type" => "github",

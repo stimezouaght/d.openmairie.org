@@ -3,6 +3,219 @@
  *
  */
 
+class om_documentation {
+
+    //
+    var $_config = array();
+
+    function __construct($config = array()) {
+        //
+        $this->_config = $config;
+    }
+
+    function is_project_exists($project = "") {
+        //
+        if ($project == "") {
+            return false;
+        }
+        //
+        foreach ($this->_config["applications"]["apps"] as $key => $value) {
+            if ($value["id"] == $project) {
+                return true;
+            }
+        }
+        //
+        return false;
+    }
+
+    function is_version_exists($project = "", $version = "") {
+        //
+        if (!$this->is_project_exists($project)) {
+            $this->log("le projet n'existe pas");
+            return false;
+        }
+        //
+        if ($version == "") {
+            return false;
+        }
+        //
+        foreach ($this->_config["applications"]["apps"] as $app) {
+            if ($app["id"] == $project) {
+                foreach ($app["versions"] as $key => $value) {
+                    if (isset($value["title"]) 
+                        && $value["title"] == $version
+                        || $key == $version) {
+                        return true;
+                    }
+                }
+                return false;
+            }
+        }
+        //
+        return false;
+    }
+
+    function is_format_exists($project = "", $version = "", $format = "") {
+        //
+        if (!$this->is_version_exists($project, $version)) {
+            $this->log("la version et ou le projet n'existe(nt) pas");
+            return false;
+        }
+        //
+        if ($format == "") {
+            return false;
+        }
+        //
+        foreach ($this->_config["applications"]["apps"] as $app) {
+            if ($app["id"] == $project) {
+                foreach ($app["versions"] as $version_id => $version_infos) {
+                    if (isset($version_infos["title"]) 
+                        && $version_infos["title"] == $version
+                        || $version_id == $version) {
+                        if (isset($version_infos["formats"])) {
+                            foreach ($version_infos["formats"] as $format_id => $format_infos) {
+                                if ($format_id == $format) {
+                                    return true;
+                                }
+                            }
+                        }
+                        return false;
+                    }
+                }
+                return false;
+            }
+        }
+        //
+        return false;
+    }
+
+    function get_link($params = array()) {
+        //
+        $project = $params["project"];
+        $version = $params["version"];
+        $format = $params["format"];
+        foreach ($this->_config["applications"]["apps"] as $app) {
+            if ($app["id"] == $project) {
+                foreach ($app["versions"] as $version_id => $version_infos) {
+                    if (isset($version_infos["title"]) 
+                        && $version_infos["title"] == $version
+                        || $version_id == $version) {
+                        if (isset($version_infos["formats"])) {
+                            foreach ($version_infos["formats"] as $format_id => $format_infos) {
+                                if ($format_id == $format) {
+                                    if (isset($format_infos["url"])) {
+                                        return $format_infos["url"];
+                                    } elseif (isset($format_infos["file"])) {
+                                        return $format_infos["file"];
+                                    } elseif (isset($format_infos["path"])) {
+                                        return $format_infos["path"];
+                                    } else {
+                                        return false;
+                                    }
+                                }
+                            }
+                        }
+                        return false;
+                    }
+                }
+                return false;
+            }
+        }
+    }
+
+    function manage_direct_link($params = array()) {
+        //
+        if (!isset($params["project"])) {
+            $this->log("aucun projet transmis");
+            return false;
+        }
+        //
+        if (!$this->is_project_exists($params["project"])) {
+            $this->log("le projet n'existe pas");
+            return false;
+        }
+        //
+        if (!isset($params["version"])) {
+            // On prend la dernière version
+            $params["version"] = "latest";
+        }
+        //
+        if (!$this->is_version_exists($params["project"], $params["version"])) {
+            // On prend la dernière version
+            $params["version"] = "latest";
+            //
+            if (!$this->is_version_exists($params["project"], $params["version"])) {
+                $this->log("la version n'existe pas");
+                return false;
+            }
+        }
+        //
+        if (!isset($params["format"])) {
+            // On prend le format html
+            $params["format"] = "html";
+        }
+        //
+        if (!$this->is_format_exists($params["project"], $params["version"], $params["format"])) {
+            // On prend le format html
+            $params["format"] = "html";
+            if (!$this->is_format_exists($params["project"], $params["version"], $params["format"])) {
+                $this->log("le format n'existe pas");
+                return false;
+            }
+        }
+        // On renvoi le lien
+        $link = $this->get_link($params);
+        //
+        if (isset($params["path"]) && $link != false) {
+            if ($this->url_exists($link.$params["path"].'/index.html')) {
+                $link .= $params["path"].'/index.html';
+            } elseif ($this->url_exists($link.$params["path"].'index.html')) {
+                $link .= $params["path"].'index.html';
+            } elseif ($this->url_exists($link.$params["path"])) {
+                $link .= $params["path"];
+            }
+        }
+        //
+        if ($link != false) {
+            header('Location:'.$link);
+            die();
+        }
+
+        //
+        return false;
+    }
+
+    function url_exists($url = "") {
+        //
+        $file_headers = @get_headers($url);
+        //
+        if ($file_headers[0] == 'HTTP/1.1 404 Not Found'
+            || $file_headers[0] == 'HTTP/1.1 404 NOT FOUND') {
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+    function log($message) {
+        //echo $message;
+    }
+}
+
+
+class om_documentation_project {
+
+
+
+}
+
+
+//
+include "documentation.inc.php";
+//
+$om_documentation = new om_documentation($docs);
+$om_documentation->manage_direct_link($_GET);
+
 //
 require "page.class.php";
 $page = new page();
@@ -15,8 +228,6 @@ $page->set_identifier("documentation");
 //
 $page->start_display();
 
-//
-include "documentation.inc.php";
 //
 foreach ($docs as $id => $rubrik) {
     //

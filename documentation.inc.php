@@ -30,6 +30,7 @@ $docs["applications"] = array(
             "source_type" => "github",
         ),
         array(
+            "id" => "opencirculation",
             "title" => "openCirculation",
             "folder" => "opencirculation",
         ),
@@ -46,6 +47,7 @@ $docs["applications"] = array(
             "source_type" => "github",
         ),
         array(
+            "id" => "openpersonnalite",
             "title" => "openPersonnalité",
             "folder" => "openpersonnalite",
         ),

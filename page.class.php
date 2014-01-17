@@ -204,7 +204,7 @@ $footer = "
         <hr/>
 
         <footer>
-            <p>&copy; openMairie 2013 - <a href=\"http://www.openmairie.org\">openMairie.org</a>
+            <p>&copy; openMairie 2004-2014 - <a href=\"http://www.openmairie.org\">openMairie.org</a>
             <small><span class=\"muted\">- Cet espace est hébergé par <a target=\"_blank\" href=\"http://www.atreal.fr/\">atReal</a></span></small></p>
         </footer>
 ";

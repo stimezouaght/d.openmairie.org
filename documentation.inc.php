@@ -159,6 +159,11 @@ foreach ($docs as $id => $rubrik) {
                 $docs[$id]["apps"][$key]["versions"][$version["id"]]["formats"]["pdf"]["folder"] = "pdf";
                 $docs[$id]["apps"][$key]["versions"][$version["id"]]["formats"]["pdf"]["url"] = "http://media.readthedocs.org/pdf/".$app["id"]."/".$version["id"]."/".$app["id"].".pdf";
 
+                $docs[$id]["apps"][$key]["versions"][$version["id"]]["formats"]["epub"] = array();
+                $docs[$id]["apps"][$key]["versions"][$version["id"]]["formats"]["epub"]["folder"] = "epub";
+                $docs[$id]["apps"][$key]["versions"][$version["id"]]["formats"]["epub"]["url"] = "http://media.readthedocs.org/epub/".$app["id"]."/".$version["id"]."/".$app["id"].".epub";
+
+
                 $docs[$id]["apps"][$key]["versions"][$version["id"]]["formats"]["source"] = array();
                 $docs[$id]["apps"][$key]["versions"][$version["id"]]["formats"]["source"]["folder"] = "source";
                 $source_url = "";

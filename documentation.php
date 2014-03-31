@@ -19,6 +19,10 @@ class om_documentation {
             return false;
         }
         //
+        if ($project == "framework") {
+            return true;
+        }
+        //
         foreach ($this->_config["applications"]["apps"] as $key => $value) {
             if ($value["id"] == $project) {
                 return true;
@@ -37,6 +41,22 @@ class om_documentation {
         //
         if ($version == "") {
             return false;
+        }
+        //
+        if ($project == "framework") {
+            //
+            foreach ($this->_config["framework"]["apps"] as $app) {
+                if ($app["id"] == "omframework") {
+                    foreach ($app["versions"] as $key => $value) {
+                        if (isset($value["title"]) 
+                            && $value["title"] == $version
+                            || $key == $version) {
+                            return true;
+                        }
+                    }
+                    return false;
+                }
+            }
         }
         //
         foreach ($this->_config["applications"]["apps"] as $app) {
@@ -64,6 +84,26 @@ class om_documentation {
         //
         if ($format == "") {
             return false;
+        }
+        //
+        foreach ($this->_config["framework"]["apps"] as $app) {
+            if ($app["id"] == "omframework") {
+                foreach ($app["versions"] as $version_id => $version_infos) {
+                    if (isset($version_infos["title"]) 
+                        && $version_infos["title"] == $version
+                        || $version_id == $version) {
+                        if (isset($version_infos["formats"])) {
+                            foreach ($version_infos["formats"] as $format_id => $format_infos) {
+                                if ($format_id == $format) {
+                                    return true;
+                                }
+                            }
+                        }
+                        return false;
+                    }
+                }
+                return false;
+            }
         }
         //
         foreach ($this->_config["applications"]["apps"] as $app) {
@@ -94,6 +134,36 @@ class om_documentation {
         $project = $params["project"];
         $version = $params["version"];
         $format = $params["format"];
+        //
+        if ($project == "framework") {
+            foreach ($this->_config["framework"]["apps"] as $app) {
+                if ($app["id"] == "omframework") {
+                    foreach ($app["versions"] as $version_id => $version_infos) {
+                        if (isset($version_infos["title"]) 
+                            && $version_infos["title"] == $version
+                            || $version_id == $version) {
+                            if (isset($version_infos["formats"])) {
+                                foreach ($version_infos["formats"] as $format_id => $format_infos) {
+                                    if ($format_id == $format) {
+                                        if (isset($format_infos["url"])) {
+                                            return $format_infos["url"];
+                                        } elseif (isset($format_infos["file"])) {
+                                            return $format_infos["file"];
+                                        } elseif (isset($format_infos["path"])) {
+                                            return $format_infos["path"];
+                                        } else {
+                                            return false;
+                                        }
+                                    }
+                                }
+                            }
+                            return false;
+                        }
+                    }
+                    return false;
+                }
+            }
+        }
         foreach ($this->_config["applications"]["apps"] as $app) {
             if ($app["id"] == $project) {
                 foreach ($app["versions"] as $version_id => $version_infos) {

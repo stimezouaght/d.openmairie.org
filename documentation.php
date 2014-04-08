@@ -86,23 +86,26 @@ class om_documentation {
             return false;
         }
         //
-        foreach ($this->_config["framework"]["apps"] as $app) {
-            if ($app["id"] == "omframework") {
-                foreach ($app["versions"] as $version_id => $version_infos) {
-                    if (isset($version_infos["title"]) 
-                        && $version_infos["title"] == $version
-                        || $version_id == $version) {
-                        if (isset($version_infos["formats"])) {
-                            foreach ($version_infos["formats"] as $format_id => $format_infos) {
-                                if ($format_id == $format) {
-                                    return true;
+        if ($project == "framework") {
+        //
+            foreach ($this->_config["framework"]["apps"] as $app) {
+                if ($app["id"] == "omframework") {
+                    foreach ($app["versions"] as $version_id => $version_infos) {
+                        if (isset($version_infos["title"]) 
+                            && $version_infos["title"] == $version
+                            || $version_id == $version) {
+                            if (isset($version_infos["formats"])) {
+                                foreach ($version_infos["formats"] as $format_id => $format_infos) {
+                                    if ($format_id == $format) {
+                                        return true;
+                                    }
                                 }
                             }
+                            return false;
                         }
-                        return false;
                     }
+                    return false;
                 }
-                return false;
             }
         }
         //

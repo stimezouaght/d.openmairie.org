@@ -63,7 +63,7 @@ foreach ($demos as $demo) {
             $app_link_labels = "";
             if (isset($app["framework"]) && $app["framework"] != "") {
                 $app_link_labels .= sprintf($app_link_label_framework_bloc,
-                                            ($app["framework"] == "OM4" ? "label-info": "label-default"),
+                                            (strpos($app["framework"], "OM4") === false ? "label-default" : "label-info"),
                                             $app["framework"]);
             }
             if (isset($app["sig"]) && $app["sig"] == true) {

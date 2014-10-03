@@ -33,9 +33,9 @@ $demos[] = array(
     "title" => "Administration & communication",
     "apps" => array(
         array(
-            "title" => "openCourrier",
-            "link" => "experimental/opencourrier",
-            "framework" => "OM4",
+            "title" => "openCourrier 3.3.1",
+            "link" => "opencourrier",
+            "framework" => "OM4.1",
         ),
         array(
             "title" => "openPersonnalité",
@@ -71,8 +71,8 @@ $demos[] = array(
     "title" => "Élections",
     "apps" => array(
         array(
-            "title" => "openElec",
-            "link" => "http://demo.openelec.org/",
+            "title" => "openElec 4.1.1",
+            "link" => "openelec",
             "framework" => "OM4",
         ),
         array(
@@ -82,7 +82,7 @@ $demos[] = array(
         ),
         array(
             "title" => "openRésultat",
-            "link" => "http://ftp.atreal.net/~openmairie/openmairie_resultat/",
+            "link" => "openresultat",
             "framework" => "OM2",
         ),
         array(

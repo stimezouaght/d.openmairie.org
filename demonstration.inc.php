@@ -16,16 +16,6 @@ $demos[] = array(
             "framework" => "OM2",
             "sig" => true,
         ),
-        array(
-            "title" => "openCimetière Facturation",
-            "link" => "http://ftp.atreal.net/~openmairie/openmairie_cimetiere_facture/",
-            "framework" => "OM2",
-        ),
-        array(
-            "title" => "openCimetière Gestion Commerciale",
-            "link" => "http://ftp.atreal.net/~openmairie/openmairie_pfm/",
-            "framework" => "OM2",
-        ),
     ),
 );
 //
@@ -59,11 +49,6 @@ $demos[] = array(
             "framework" => "OM4",
             "sig" => true,
         ),
-        array(
-            "title" => "openRèglement",
-            "link" => "http://ftp.atreal.net/~openmairie/openmairie_reglement/",
-            "framework" => "OM2",
-        ),   
     ),
 );
 //
@@ -74,11 +59,6 @@ $demos[] = array(
             "title" => "openElec 4.1.1",
             "link" => "openelec",
             "framework" => "OM4",
-        ),
-        array(
-            "title" => "openScrutin",
-            "link" => "http://ftp.atreal.net/~openmairie/openmairie_scrutin/",
-            "framework" => "OM2",
         ),
         array(
             "title" => "openRésultat",
@@ -106,60 +86,7 @@ $demos[] = array(
             "link" => "experimental/openfoncier",
             "framework" => "OM4",
             "sig" => true,
-        ),
-        array(
-            "title" => "openCadastre",
-            "link" => "http://ftp.atreal.net/~openmairie/openmairie_cadastre/",
-            "framework" => "OM2",
-        ),
-        array(
-            "title" => "openAssainissement",
-            "link" => "http://ftp.atreal.net/~openmairie/openmairie_assainissement/",
-            "framework" => "OM2",
-        ),   
-    ),
-);
-//
-$demos[] = array(
-    "title" => "Planning & Intervention",
-    "apps" => array(
-        array(
-            "title" => "openVieAssociative",
-            "link" => "http://ftp.atreal.net/~openmairie/openmairie_vieassociative/",
-            "framework" => "OM2",
-        ),
-        array(
-            "title" => "openPlanning",
-            "link" => "http://ftp.atreal.net/~openmairie/openmairie_planning/",
-            "framework" => "OM2",
-        ),
-        array(
-            "title" => "openMainCourante",
-            "link" => "http://ftp.atreal.net/~openmairie/openmairie_maincourante/",
-            "framework" => "OM2",
-        ),   
-    ),
-);
-//
-$demos[] = array(
-    "title" => "Stock & Facture",
-    "apps" => array(
-        array(
-            "title" => "openStock",
-            "link" => "http://ftp.atreal.net/~openmairie/openmairie_stock/",
-            "framework" => "OM2",
-        ),
-    ),
-);
-//
-$demos[] = array(
-    "title" => "Urgence",
-    "apps" => array(
-        array(
-            "title" => "openVaccin",
-            "link" => "http://ftp.atreal.net/~openmairie/openurgence_vaccin/",
-            "framework" => "OM2",
-        ),
+        ), 
     ),
 );
 //

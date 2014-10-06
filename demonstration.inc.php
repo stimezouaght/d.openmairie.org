@@ -6,105 +6,108 @@
 
 //
 $demos = array();
+
 //
-$demos[] = array(
-    "title" => "Activités funéraires",
-    "apps" => array(
-        array(
-            "title" => "openCimetière",
-            "link" => "experimental/opencimetiere",
-            "framework" => "OM2",
+$demos["opencimetiere"] = array(
+    "title" => "openCimetière",
+    "description" => "openCimetière est un logiciel de gestion des concessions de cimetières. Il
+permet la gestion de la place (défunt) dans les concessions, la gestion des
+autorisations (concessionnaire et ayant droit), la gestion du terme de la
+concession (transfert de défunt, transfert à l’ossuaire), la gestion des
+concessions libres, la gestion des opérations funéraires, l’archivage
+systématique de l’ensemble des données pour constituer une mémoire commune et
+bien plus encore.",
+    "categories" => array(
+        "Activités funéraires", 
+    ),
+    "versions" => array(
+        "3.0.x" => array(
+            "title" => "3.0.0-a6",
+            "framework" => "4.4.3",
             "sig" => true,
+            "href" => "opencimetiere",
         ),
     ),
 );
+
 //
-$demos[] = array(
-    "title" => "Administration & communication",
-    "apps" => array(
-        array(
-            "title" => "openCourrier 3.3.1",
-            "link" => "opencourrier",
-            "framework" => "OM4.1",
-        ),
-        array(
-            "title" => "openPersonnalité",
-            "link" => "experimental/openpersonnalite",
-            "framework" => "OM4",
-        ),        
+$demos["opencourrier"] = array(
+    "title" => "openCourrier",
+    "description" => "openCourrier est un logiciel de gestion de courrier entrant et sortant dans une
+organisation avec possibilité d'affecter des tâches et bien plus encore.",
+    "categories" => array(
+        "Administration & communication",
+        "Population", 
     ),
-);
-//
-$demos[] = array(
-    "title" => "Population",
-    "apps" => array(
-        array(
-            "title" => "openRecensement",
-            "link" => "experimental/openrecensement",
-            "framework" => "OM4",
-        ),
-        array(
-            "title" => "openDébitBoisson",
-            "link" => "experimental/opendebitboisson",
-            "framework" => "OM4",
+    "versions" => array(
+        "4.0.x" => array(
+            "title" => "4.0.2",
+            "framework" => "4.4.3",
             "sig" => true,
+            "href" => "opencourrier",
+            "autoinstall" => true,
+            "svn" => "svn://scm.adullact.net/scmrepos/svn/opencourrier/tags/4.0.2",
+            "db" => "pgsql",
         ),
     ),
 );
+
 //
-$demos[] = array(
-    "title" => "Élections",
-    "apps" => array(
-        array(
-            "title" => "openElec 4.1.1",
-            "link" => "openelec",
-            "framework" => "OM4",
+$demos["openelec"] = array(
+    "title" => "openElec",
+    "description" => "openElec est un logiciel de gestion des listes électorales. Il permet la
+gestion complète des élections politiques, de l'inscription d'un électeur,
+jusqu'à l'édition de sa carte électorale, l'édition des listes d'émargement,
+le transfert à l'insee des nouvelles inscription et bien plus encore.",
+    "categories" => array(
+        "Élections", 
+        "Population", 
+    ),
+    "versions" => array(
+        "4.2.x" => array(
+            "title" => "4.2.0-rc2",
+            "framework" => "4.1.10",
+            "href" => "openelec",
         ),
-        array(
-            "title" => "openRésultat",
-            "link" => "openresultat",
-            "framework" => "OM2",
-        ),
-        array(
-            "title" => "openÉlu",
-            "link" => "experimental/openelu/openmairie_elu.php",
-        ),   
     ),
 );
+
 //
-$demos[] = array(
-    "title" => "Urbanisme",
-    "apps" => array(
-        array(
-            "title" => "openDomainePublic",
-            "link" => "experimental/opendomainepublic",
-            "framework" => "OM4",
-            "sig" => true,
+$demos["openresultat"] = array(
+    "title" => "openRésultat",
+    "description" => "openRésultat permet la gestion des résultats électoraux lors de soirées
+électorales : export des résultats pour la préfecture, animation sur
+grand écran, publication des résultats sur le web, gestion des centaines, 
+de la participation et bien plus encore.",
+    "categories" => array(
+        "Élections", 
+    ),
+    "versions" => array(
+        "1.14.x" => array(
+            "title" => "1.14.1",
+            "framework" => "2",
+            "href" => "openresultat",
         ),
-        array(
-            "title" => "openFoncier",
-            "link" => "experimental/openfoncier",
-            "framework" => "OM4",
-            "sig" => true,
-        ), 
     ),
 );
+
 //
-$demos[] = array(
-    "title" => "Informatique & Framework",
-    "apps" => array(
-        array(
-            "title" => "openRegistreCIL",
-            "link" => "experimental/openregistrecil",
-            "framework" => "OM4",
-        ),
-        array(
-            "title" => "openExemple Framework",
-            "link" => "experimental/openexemple",
-            "framework" => "OM4",
+$demos["openscrutin"] = array(
+    "title" => "openScrutin",
+    "description" => "openRésultat permet la gestion des résultats électoraux lors de soirées
+électorales : export des résultats pour la préfecture, animation sur
+grand écran, publication des résultats sur le web, gestion des centaines, 
+de la participation et bien plus encore.",
+    "categories" => array(
+        "Élections", 
+    ),
+    "versions" => array(
+        "2.0.x" => array(
+            "title" => "2.0.3",
+            "framework" => "4.3.1",
+            "href" => "openscrutin",
         ),
     ),
 );
 
 ?>
-

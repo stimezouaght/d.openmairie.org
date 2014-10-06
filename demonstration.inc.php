@@ -74,6 +74,7 @@ le transfert à l'insee des nouvelles inscription et bien plus encore.",
             "autoinstall" => true,
             "svn" => "svn://scm.adullact.net/scmrepos/svn/openelec/tags/4.2.0-rc2",
             "db" => "pgsql",
+            "schema" => "public",
         ),
     ),
 );

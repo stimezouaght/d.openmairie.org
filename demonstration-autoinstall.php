@@ -28,6 +28,9 @@ foreach ($demos as $key_app => $app) {
             //
             echo $version["db"];
             echo "\n";
+            //
+            echo (isset($version["schema"]) ? $version["schema"] : $key_app);
+            echo "\n";
         }
     }
 }

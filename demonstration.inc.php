@@ -94,10 +94,9 @@ de la participation et bien plus encore.",
 //
 $demos["openscrutin"] = array(
     "title" => "openScrutin",
-    "description" => "openRésultat permet la gestion des résultats électoraux lors de soirées
-électorales : export des résultats pour la préfecture, animation sur
-grand écran, publication des résultats sur le web, gestion des centaines, 
-de la participation et bien plus encore.",
+    "description" => "openScrutin est un logiciel de composition des bureaux de vote, il permet la
+gestion des secrétaires, plantons, présidents, vice présidents, assesseurs,
+délégués pour les élections politiques et bien plus encore.",
     "categories" => array(
         "Élections", 
     ),

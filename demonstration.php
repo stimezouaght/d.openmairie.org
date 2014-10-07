@@ -178,7 +178,7 @@ if ($view == "by_category") {
 }
 
 //
-echo "<script src=\"http://docs.openmairie.org/demo.stats.js\"></script>";
+echo "<script src=\"http://demo.openmairie.org/demo.stats.js\"></script>";
 
 //
 $page->end_display();

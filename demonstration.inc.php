@@ -21,11 +21,11 @@ bien plus encore.",
         "Activités funéraires", 
     ),
     "versions" => array(
-        "3.0.x" => array(
+        "3.0" => array(
             "title" => "3.0.0-a6",
             "framework" => "4.4.3",
             "sig" => true,
-            "href" => "opencimetiere",
+            "href" => "a/opencimetiere/3.0",
             "autoinstall" => true,
             "svn" => "svn://scm.adullact.net/scmrepos/svn/opencimetiere/tags/3.0.0-a6",
             "db" => "pgsql",
@@ -43,11 +43,11 @@ organisation avec possibilité d'affecter des tâches et bien plus encore.",
         "Population", 
     ),
     "versions" => array(
-        "4.0.x" => array(
+        "4.0" => array(
             "title" => "4.0.1",
             "framework" => "4.4.3",
             "sig" => true,
-            "href" => "opencourrier",
+            "href" => "a/opencourrier/4.0",
             "autoinstall" => true,
             "svn" => "svn://scm.adullact.net/scmrepos/svn/opencourrier/tags/4.0.1",
             "db" => "pgsql",
@@ -67,10 +67,10 @@ le transfert à l'insee des nouvelles inscription et bien plus encore.",
         "Population", 
     ),
     "versions" => array(
-        "4.2.x" => array(
+        "4.2" => array(
             "title" => "4.2.0-rc2",
-            "framework" => "4.1.10",
-            "href" => "openelec",
+            "framework" => "4.1.13",
+            "href" => "a/openelec/4.2",
             "autoinstall" => true,
             "svn" => "svn://scm.adullact.net/scmrepos/svn/openelec/tags/4.2.0-rc2",
             "db" => "pgsql",
@@ -90,10 +90,10 @@ de la participation et bien plus encore.",
         "Élections", 
     ),
     "versions" => array(
-        "1.14.x" => array(
+        "1.14" => array(
             "title" => "1.14.1",
             "framework" => "2",
-            "href" => "openresultat",
+            "href" => "a/openresultat/1.14",
             "autoinstall" => true,
             "svn" => "svn://scm.adullact.net/scmrepos/svn/openresultat/tags/1.14.1",
             "db" => "mysql",
@@ -111,10 +111,10 @@ délégués pour les élections politiques et bien plus encore.",
         "Élections", 
     ),
     "versions" => array(
-        "2.0.x" => array(
+        "2.0" => array(
             "title" => "2.0.3",
             "framework" => "4.3.1",
-            "href" => "openscrutin",
+            "href" => "a/openscrutin/2.0",
             "autoinstall" => true,
             "svn" => "svn://scm.adullact.net/scmrepos/svn/openscrutin/tags/2.0.3",
             "db" => "pgsql",

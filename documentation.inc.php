@@ -79,6 +79,12 @@ $docs["framework"] = array(
     ),
 );
 
+
+$refresh = false;
+if (isset($_GET["refresh"])) {
+    $refresh = true;
+}
+
 /**
  *
  */
@@ -98,21 +104,48 @@ foreach ($docs as $id => $rubrik) {
 
         //
         if (isset($app["type"]) && $app["type"] == "readthedocs") {
-
+            //
+            $filename_project_infos = 'rtd-'.$app["id"].'-project.json';
+            $filename_project_versions_infos = 'rtd-'.$app["id"].'-version.json';
             // Récupération des infos sur le projet sur ReadTheDocs.org
-            $ch = curl_init("http://readthedocs.org/api/v1/project/".$app["id"]."/?format=json");
-            curl_setopt($ch, CURLOPT_RETURNTRANSFER, True);
-            $project_infos = json_decode(curl_exec($ch));
-            curl_close($ch);
-            //var_dump($project_infos);
+            if (!file_exists($filename_project_infos) || $refresh === true) {
+                //
+                $ch = curl_init("http://readthedocs.org/api/v1/project/".$app["id"]."/?format=json");
+                curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+                $response = curl_exec($ch);
+                curl_close($ch);
+                //
+                @$fp = fopen($filename_project_infos, 'w');
+                if ($fp != false) {
+                    fwrite($fp, $response);
+                    fclose($fp);
+                }
+            } else {
+                //
+                $response = file_get_contents($filename_project_infos);
+            }
+            //
+            $project_infos = json_decode($response);
 
             // Récupération des infos sur les différentes versions du projet 
             // su ReadTheDocs.org
-            $ch = curl_init("http://readthedocs.org/api/v1/version/".$app["id"]."/?format=json");
-            curl_setopt($ch, CURLOPT_RETURNTRANSFER, True);
-            $project_versions_infos = json_decode(curl_exec($ch));
-            curl_close($ch);
-            //var_dump($project_versions_infos);
+            if (!file_exists($filename_project_versions_infos) || $refresh === true) {
+                $ch = curl_init("http://readthedocs.org/api/v1/version/".$app["id"]."/?format=json");
+                curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+                $response = curl_exec($ch);
+                curl_close($ch);
+                //
+                @$fp = fopen($filename_project_versions_infos, 'w');
+                if ($fp != false) {
+                    fwrite($fp, $response);
+                    fclose($fp);
+                }
+            } else {
+                //
+                $response = file_get_contents($filename_project_versions_infos);
+            }
+            //
+            $project_versions_infos = json_decode($response);
 
             //
             if ($project_infos != NULL) {

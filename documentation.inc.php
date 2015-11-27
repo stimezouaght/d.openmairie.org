@@ -47,6 +47,12 @@ $docs["applications"] = array(
             "source_type" => "github",
         ),
         array(
+            "id" => "openmarcheforain",
+            "type" => "readthedocs",
+            "source_url" => "https://github.com/openmairie/openmarcheforain-documentation",
+            "source_type" => "github",
+        ),
+        array(
             "id" => "openpersonnalite",
             "title" => "openPersonnalité",
             "folder" => "openpersonnalite",

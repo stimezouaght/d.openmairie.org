@@ -8,6 +8,29 @@
 $demos = array();
 
 //
+$demos["openads"] = array(
+    "title" => "openADS",
+    "description" => "openADS est un logiciel libre de gestion de l'urbanisme. Il permet le suivi de
+l'instruction des demandes de permis et d'autorisations. openADS comprend
+la gestion de l'enchainement des tâches, des délais légaux et de la prise en
+compte des contraintes du PLU, avec possibilité d'affichage cartographique
+et bien plus encore.",
+    "categories" => array(
+        "Urbanisme",
+    ),
+    "versions" => array(
+        "3.32" => array(
+            "title" => "3.32.1",
+            "framework" => "4.5",
+            "href" => "a/openads/3.32",
+            "autoinstall" => true,
+            "svn" => "svn://scm.adullact.net/svn/openfoncier/tags/3.32.1",
+            "db" => "pgsql",
+        ),
+    ),
+);
+
+//
 $demos["opencimetiere"] = array(
     "title" => "openCimetière",
     "description" => "openCimetière est un logiciel de gestion des concessions de cimetières. Il

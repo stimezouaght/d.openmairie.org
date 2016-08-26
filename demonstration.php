@@ -114,13 +114,14 @@ if ($view == "by_category") {
                     if (isset($version["sig"]) && $version["sig"] == true) {
                         $app_link_labels .= sprintf($app_link_label_sig_bloc);
                     }
-                    //
-                    $bloc_links .= sprintf(
-                        $app_link_bloc, 
-                        $version["href"], 
-                        $app["title"]." ".$version["title"], 
-                        $app_link_labels
-                    );
+                    if (file_exists($version["href"])) {
+                        $bloc_links .= sprintf(
+                            $app_link_bloc,
+                            $version["href"],
+                            $app["title"]." ".$version["title"],
+                            $app_link_labels
+                        );
+                    }
                 }
             }
             //
@@ -144,6 +145,8 @@ if ($view == "by_category") {
         //
         $bloc_links = "";
         //
+        $no_demo = true;
+        //
         foreach ($app["versions"] as $version) {
             //
             $app_link_labels = "";
@@ -157,13 +160,19 @@ if ($view == "by_category") {
             if (isset($version["sig"]) && $version["sig"] == true) {
                 $app_link_labels .= sprintf($app_link_label_sig_bloc);
             }
-            //
-            $bloc_links .= sprintf(
-                $app_link_bloc, 
-                $version["href"], 
-                $app["title"]." ".$version["title"], 
-                $app_link_labels
-            );
+            if (file_exists($version["href"])) {
+                $no_demo = false;
+                $bloc_links .= sprintf(
+                    $app_link_bloc,
+                    $version["href"],
+                    $app["title"]." ".$version["title"],
+                    $app_link_labels
+                );
+            }
+        }
+        //
+        if ($no_demo === true) {
+            $bloc_links .= "<small>> Aucune démonstration pour l'instant</small>";
         }
         //
         printf(

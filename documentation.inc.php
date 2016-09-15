@@ -30,11 +30,6 @@ $docs["applications"] = array(
             "source_type" => "github",
         ),
         array(
-            "id" => "opencirculation",
-            "title" => "openCirculation",
-            "folder" => "opencirculation",
-        ),
-        array(
             "id" => "opencourrier",
             "type" => "readthedocs",
             "source_url" => "https://github.com/openmairie/opencourrier-documentation",
@@ -51,11 +46,6 @@ $docs["applications"] = array(
             "type" => "readthedocs",
             "source_url" => "https://github.com/openmairie/openmarcheforain-documentation",
             "source_type" => "github",
-        ),
-        array(
-            "id" => "openpersonnalite",
-            "title" => "openPersonnalité",
-            "folder" => "openpersonnalite",
         ),
         array(
             "id" => "openresultat",

@@ -120,6 +120,8 @@ $navbar = "
                                 <li><a href=\"http://demo.openmairie.org\"><i class=\"icon-laptop\"></i> Espace Démonstration<br/><small>demo.openmairie.org</small></a></li>
                                 <li class=\"divider\"></li>
                                 <li><a href=\"http://docs.openmairie.org\"><i class=\"icon-book\"></i> Espace Documentation<br/><small>docs.openmairie.org</small></a></li>    
+                                    <li class=\"divider\"></li>
+                                <li><a href=\"http://communaute.openmairie.org\"><i class=\"icon-group\"></i> Forum des Utilisateurs<br/><small>communaute.openmairie.org</small></a></li>  
                             </ul>
                         </li>
                     </ul>

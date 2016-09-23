@@ -51,9 +51,23 @@ $app_link_label_sig_bloc =
 //
 include "demonstration.inc.php";
 
-$view = "by_app"; 
+if (isset($_GET["view"]) && $_GET["view"] === "by_category") {
+    $view = "by_category";
+} else {
+    $view = "by_app";
+}
 
-//$view = "by_category";
+printf(
+    '
+<div class="btn-group" role="group">
+<a class="btn btn-default%s" role="button" href="?view=by_app">Par application</a>
+<a class="btn btn-default%s" role="button" href="?view=by_category">Par catégorie</a>
+</div><br/><br/>
+',
+    ($view == "by_app" ? " active" : ""),
+    ($view == "by_category" ? " active" : "")
+);
+
 
 if ($view == "by_category") {
 

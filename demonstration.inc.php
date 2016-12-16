@@ -90,12 +90,12 @@ le transfert à l'insee des nouvelles inscription et bien plus encore.",
         "Population", 
     ),
     "versions" => array(
-        "4.3" => array(
-            "title" => "4.3.0",
+        "4.4" => array(
+            "title" => "4.4.0",
             "framework" => "4.1.13",
-            "href" => "a/openelec/4.3",
+            "href" => "a/openelec/4.4",
             "autoinstall" => true,
-            "svn" => "svn://scm.adullact.net/svn/openelec/tags/4.3.0",
+            "svn" => "svn://scm.adullact.net/svn/openelec/tags/4.4.0",
             "db" => "pgsql",
             "schema" => "public",
         ),

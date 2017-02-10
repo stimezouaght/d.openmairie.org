@@ -20,11 +20,11 @@ et bien plus encore.",
     ),
     "versions" => array(
         "3.35" => array(
-            "title" => "3.35.0",
+            "title" => "3.35.3",
             "framework" => "4.5",
             "href" => "a/openads/3.35",
             "autoinstall" => true,
-            "svn" => "svn://scm.adullact.net/svn/openfoncier/tags/3.35.0",
+            "svn" => "svn://scm.adullact.net/svn/openfoncier/tags/3.35.3",
             "db" => "pgsql",
         ),
     ),

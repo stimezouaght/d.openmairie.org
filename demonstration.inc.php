@@ -19,7 +19,7 @@ et bien plus encore.",
         "Urbanisme",
     ),
     "versions" => array(
-        "3.35" => array(
+        "3.36" => array(
             "title" => "3.36.0",
             "framework" => "4.5",
             "href" => "a/openads/3.36",

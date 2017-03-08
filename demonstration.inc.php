@@ -91,11 +91,11 @@ le transfert à l'insee des nouvelles inscription et bien plus encore.",
     ),
     "versions" => array(
         "4.4" => array(
-            "title" => "4.4.1",
+            "title" => "4.4.2",
             "framework" => "4.1.13",
             "href" => "a/openelec/4.4",
             "autoinstall" => true,
-            "svn" => "svn://scm.adullact.net/svn/openelec/tags/4.4.1",
+            "svn" => "svn://scm.adullact.net/svn/openelec/tags/4.4.2",
             "db" => "pgsql",
             "schema" => "public",
         ),

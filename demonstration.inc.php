@@ -113,12 +113,12 @@ de la participation et bien plus encore.",
         "Élections", 
     ),
     "versions" => array(
-        "1.15" => array(
-            "title" => "1.15",
+        "1.16" => array(
+            "title" => "1.16",
             "framework" => "2",
-            "href" => "a/openresultat/1.15",
+            "href" => "a/openresultat/1.16",
             "autoinstall" => true,
-            "svn" => "svn://scm.adullact.net/svn/openresultat/tags/1.15",
+            "svn" => "svn://scm.adullact.net/svn/openresultat/tags/1.16",
             "db" => "mysql",
         ),
     ),

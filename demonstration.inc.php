@@ -31,6 +31,25 @@ et bien plus encore.",
 );
 
 //
+$demos["openaria"] = array(
+    "title" => "openARIA",
+    "description" => "openARIA est un logiciel libre permettant l'Analyse du Risque Incendie et de l'Accessibilité pour les Établissements Recevant du Public (ERP).",
+    "categories" => array(
+        "Urbanisme",
+    ),
+    "versions" => array(
+        "1.2" => array(
+            "title" => "1.2.0",
+            "framework" => "4.5",
+            "href" => "a/openads/1.2",
+            "autoinstall" => true,
+            "svn" => "svn://scm.adullact.net/svn/openaria/tags/1.2.0",
+            "db" => "pgsql",
+        ),
+    ),
+);
+
+//
 $demos["opencimetiere"] = array(
     "title" => "openCimetière",
     "description" => "openCimetière est un logiciel de gestion des concessions de cimetières. Il

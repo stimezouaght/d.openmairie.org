@@ -133,11 +133,11 @@ de la participation et bien plus encore.",
     ),
     "versions" => array(
         "1.16" => array(
-            "title" => "1.16",
+            "title" => "1.16.1",
             "framework" => "2",
             "href" => "a/openresultat/1.16",
             "autoinstall" => true,
-            "svn" => "svn://scm.adullact.net/svn/openresultat/tags/1.16",
+            "svn" => "svn://scm.adullact.net/svn/openresultat/tags/1.16.1",
             "db" => "mysql",
         ),
     ),

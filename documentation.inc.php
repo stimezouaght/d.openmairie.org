@@ -65,12 +65,18 @@ $docs["applications"] = array(
 //
 $docs["framework"] = array(
     "title" => "Framework",
+    "folder" => "/var/www/documentation/",
     "apps" => array(
         array(
             "id" => "omframework",
             "type" => "readthedocs",
             "source_url" => "https://github.com/openmairie/omframework-documentation",
             "source_type" => "github",
+        ),
+        array(
+            "id" => "omframework-api",
+            "folder" => "a/omframework-api",
+            "title" => "API",
         ),
     ),
 );
@@ -273,6 +279,7 @@ foreach ($docs as $id => $rubrik) {
                             $docs[$id]["apps"][$key]["versions"][$version]["formats"][$format] = array();
 
                             // On stocke son répertoire et son path
+                            $docs[$id]["apps"][$key]["versions"][$version]["formats"][$format]["url"] = $app["folder"]."/".$version."/".$format."/";
                             $docs[$id]["apps"][$key]["versions"][$version]["formats"][$format]["folder"] = $format;
                             $docs[$id]["apps"][$key]["versions"][$version]["formats"][$format]["path"] = $docs[$id]["apps"][$key]["versions"][$version]["path"].$docs[$id]["apps"][$key]["versions"][$version]["formats"][$format]["folder"]."/";
 

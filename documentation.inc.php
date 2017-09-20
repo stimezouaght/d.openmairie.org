@@ -54,6 +54,12 @@ $docs["applications"] = array(
             "source_type" => "github",
         ),
         array(
+            "id" => "openreussiteeducative",
+            "type" => "readthedocs",
+            "source_url" => "https://github.com/openmairie/openreussiteeducative-documentation",
+            "source_type" => "github",
+        ),
+        array(
             "id" => "openscrutin",
             "type" => "readthedocs",
             "source_url" => "https://github.com/openmairie/openscrutin-documentation",

@@ -48,6 +48,12 @@ $docs["applications"] = array(
             "source_type" => "github",
         ),
         array(
+            "id" => "openrecensement",
+            "type" => "readthedocs",
+            "source_url" => "https://github.com/openmairie/openrecensement-documentation",
+            "source_type" => "github",
+        ),
+        array(
             "id" => "openresultat",
             "type" => "readthedocs",
             "source_url" => "https://github.com/openmairie/openresultat-documentation",

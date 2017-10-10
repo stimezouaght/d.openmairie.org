@@ -70,7 +70,6 @@ printf(
 
 
 if ($view == "by_category") {
-
     // On récupère la liste des catégories
     $categories = array("", );
     $demos_by_category = array();
@@ -140,7 +139,7 @@ if ($view == "by_category") {
             }
             //
             printf(
-                $rubrik_title_bloc, 
+                $rubrik_title_bloc,
                 $category["title"],
                 "",
                 $bloc_links
@@ -190,8 +189,8 @@ if ($view == "by_category") {
         }
         //
         printf(
-            $rubrik_title_bloc, 
-            $app["title"], 
+            $rubrik_title_bloc,
+            $app["title"],
             substr($app["description"], 0, 130)."...",
             $bloc_links
         );

@@ -40,6 +40,6 @@ $return = ob_get_clean();
 
 //
 $filename = "demonstration-autoinstall.txt";
-file_put_contents ($filename , $return);
+file_put_contents($filename, $return);
 
 ?>

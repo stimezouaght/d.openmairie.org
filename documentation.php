@@ -48,7 +48,7 @@ class om_documentation {
             foreach ($this->_config["framework"]["apps"] as $app) {
                 if ($app["id"] == "omframework") {
                     foreach ($app["versions"] as $key => $value) {
-                        if (isset($value["title"]) 
+                        if (isset($value["title"])
                             && $value["title"] == $version
                             || $key == $version) {
                             return true;
@@ -62,7 +62,7 @@ class om_documentation {
         foreach ($this->_config["applications"]["apps"] as $app) {
             if ($app["id"] == $project) {
                 foreach ($app["versions"] as $key => $value) {
-                    if (isset($value["title"]) 
+                    if (isset($value["title"])
                         && $value["title"] == $version
                         || $key == $version) {
                         return true;
@@ -91,7 +91,7 @@ class om_documentation {
             foreach ($this->_config["framework"]["apps"] as $app) {
                 if ($app["id"] == "omframework") {
                     foreach ($app["versions"] as $version_id => $version_infos) {
-                        if (isset($version_infos["title"]) 
+                        if (isset($version_infos["title"])
                             && $version_infos["title"] == $version
                             || $version_id == $version) {
                             if (isset($version_infos["formats"])) {
@@ -112,7 +112,7 @@ class om_documentation {
         foreach ($this->_config["applications"]["apps"] as $app) {
             if ($app["id"] == $project) {
                 foreach ($app["versions"] as $version_id => $version_infos) {
-                    if (isset($version_infos["title"]) 
+                    if (isset($version_infos["title"])
                         && $version_infos["title"] == $version
                         || $version_id == $version) {
                         if (isset($version_infos["formats"])) {
@@ -142,7 +142,7 @@ class om_documentation {
             foreach ($this->_config["framework"]["apps"] as $app) {
                 if ($app["id"] == "omframework") {
                     foreach ($app["versions"] as $version_id => $version_infos) {
-                        if (isset($version_infos["title"]) 
+                        if (isset($version_infos["title"])
                             && $version_infos["title"] == $version
                             || $version_id == $version) {
                             if (isset($version_infos["formats"])) {
@@ -170,7 +170,7 @@ class om_documentation {
         foreach ($this->_config["applications"]["apps"] as $app) {
             if ($app["id"] == $project) {
                 foreach ($app["versions"] as $version_id => $version_infos) {
-                    if (isset($version_infos["title"]) 
+                    if (isset($version_infos["title"])
                         && $version_infos["title"] == $version
                         || $version_id == $version) {
                         if (isset($version_infos["formats"])) {
@@ -316,7 +316,7 @@ foreach ($docs as $id => $rubrik) {
     echo "<th>";
     echo "&nbsp;";
     echo "</th>";
-    
+
     if (!isset($rubrik["versions"]) || (isset($rubrik["versions"]) &&  $rubrik["versions"] != false)) {
         echo "<th>";
         echo "version";
@@ -332,7 +332,6 @@ foreach ($docs as $id => $rubrik) {
     echo "<tbody>\n";
     //
     foreach ($rubrik["apps"] as $key => $app) {
-
         //
         $counter = 0;
         //
@@ -340,7 +339,7 @@ foreach ($docs as $id => $rubrik) {
         if (isset($app["versions"])) {
             $versions_nb = count($app["versions"]);
         }
-        
+
         //
         if ($versions_nb == 0) {
             //
@@ -352,7 +351,7 @@ foreach ($docs as $id => $rubrik) {
                 echo $app["title"];
                 //
                 echo "</td>";
-            
+
             //
             if (!isset($rubrik["versions"]) || (isset($rubrik["versions"]) &&  $rubrik["versions"] != false)) {
                 echo "<td>";
@@ -366,7 +365,6 @@ foreach ($docs as $id => $rubrik) {
             //
             echo "</tr>\n";
         } else {
-
             foreach ($app["versions"] as $version) {
                 //
                 echo "<tr>";
@@ -412,9 +410,7 @@ foreach ($docs as $id => $rubrik) {
                 //
                 $counter++;
             }
-            
         }
-
     }
     //
     echo "<tbody>\n";

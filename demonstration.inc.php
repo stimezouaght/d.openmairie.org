@@ -1,6 +1,6 @@
 <?php
 /**
- * 
+ *
  *
  */
 
@@ -60,7 +60,7 @@ concessions libres, la gestion des opérations funéraires, l’archivage
 systématique de l’ensemble des données pour constituer une mémoire commune et
 bien plus encore.",
     "categories" => array(
-        "Activités funéraires", 
+        "Activités funéraires",
     ),
     "versions" => array(
         "3.0" => array(
@@ -82,7 +82,7 @@ $demos["opencourrier"] = array(
 organisation avec possibilité d'affecter des tâches et bien plus encore.",
     "categories" => array(
         "Administration & communication",
-        "Population", 
+        "Population",
     ),
     "versions" => array(
         "4.1" => array(
@@ -105,8 +105,8 @@ gestion complète des élections politiques, de l'inscription d'un électeur,
 jusqu'à l'édition de sa carte électorale, l'édition des listes d'émargement,
 le transfert à l'insee des nouvelles inscription et bien plus encore.",
     "categories" => array(
-        "Élections", 
-        "Population", 
+        "Élections",
+        "Population",
     ),
     "versions" => array(
         "4.4" => array(
@@ -126,10 +126,10 @@ $demos["openresultat"] = array(
     "title" => "openRésultat",
     "description" => "openRésultat permet la gestion des résultats électoraux lors de soirées
 électorales : export des résultats pour la préfecture, animation sur
-grand écran, publication des résultats sur le web, gestion des centaines, 
+grand écran, publication des résultats sur le web, gestion des centaines,
 de la participation et bien plus encore.",
     "categories" => array(
-        "Élections", 
+        "Élections",
     ),
     "versions" => array(
         "1.16" => array(
@@ -150,7 +150,7 @@ $demos["openscrutin"] = array(
 gestion des secrétaires, plantons, présidents, vice présidents, assesseurs,
 délégués pour les élections politiques et bien plus encore.",
     "categories" => array(
-        "Élections", 
+        "Élections",
     ),
     "versions" => array(
         "2.0" => array(

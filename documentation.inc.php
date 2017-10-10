@@ -104,10 +104,9 @@ if (isset($_GET["refresh"])) {
  */
 // Pour chaque rubrique
 foreach ($docs as $id => $rubrik) {
-
     // On stocke le path de la rubrique si un dossier est défini
     // Sinon on part du principe qu'on se trouve dans le dossier
-    // racine    
+    // racine
     $rubrik_path = "";
     if (isset($rubrik["folder"])) {
         $rubrik_path = $rubrik["folder"]."/";
@@ -115,7 +114,6 @@ foreach ($docs as $id => $rubrik) {
 
     // Pour chaque application
     foreach ($rubrik["apps"] as $key => $app) {
-
         //
         if (isset($app["type"]) && $app["type"] == "readthedocs") {
             //
@@ -141,7 +139,7 @@ foreach ($docs as $id => $rubrik) {
             //
             $project_infos = json_decode($response);
 
-            // Récupération des infos sur les différentes versions du projet 
+            // Récupération des infos sur les différentes versions du projet
             // su ReadTheDocs.org
             if (!file_exists($filename_project_versions_infos) || $refresh === true) {
                 $ch = curl_init("http://readthedocs.org/api/v1/version/".$app["id"]."/?format=json");
@@ -188,7 +186,7 @@ foreach ($docs as $id => $rubrik) {
             }
             //
             $docs[$id]["apps"][$key]["versions"] = array();
-            foreach($versions as $version) {
+            foreach ($versions as $version) {
                 // On stocke son répertoire et son path
                 $docs[$id]["apps"][$key]["versions"][$version["id"]]["title"] = $version["title"];
                 $docs[$id]["apps"][$key]["versions"][$version["id"]]["folder"] = $version["id"];
@@ -237,26 +235,23 @@ foreach ($docs as $id => $rubrik) {
 
         // Si le répertoire de la documentation existe bien
         if (is_dir($rubrik_path.$app["folder"])) {
-
-            // On stocke le path de l'application 
+            // On stocke le path de l'application
             $docs[$id]["apps"][$key]["path"] = $rubrik_path.$app["folder"]."/";
 
             // On intialise le tableau des versions
             $docs[$id]["apps"][$key]["versions"] = array();
-            
+
             // On récupère la liste des versions (répertoires) contenus
             // dans le répertoire de l'application
             $versions = scandir($docs[$id]["apps"][$key]["path"]);
-            
+
             // Pour chaque version
             foreach ($versions as $version) {
-
                 // Si l'élément est effectivemnt un répertoire et est bien
                 // une version
                 if ($version != "." && $version != ".."
                     && $version != ".svn"
                     && is_dir($docs[$id]["apps"][$key]["path"].$version)) {
-
                     // On initialise le tableau de la version en questions
                     $docs[$id]["apps"][$key]["versions"][$version] = array();
 
@@ -267,7 +262,7 @@ foreach ($docs as $id => $rubrik) {
 
                     // On intialise le tableau des versions
                     $docs[$id]["apps"][$key]["versions"][$version]["formats"] = array();
-            
+
                     if (!isset($rubrik["versions"]) || (isset($rubrik["versions"]) &&  $rubrik["versions"] != false)) {
                         // On récupère la liste des formats (répertoires) contenus
                         // dans le répertoire de la version
@@ -280,13 +275,11 @@ foreach ($docs as $id => $rubrik) {
 
                     // Pour chaque format
                     foreach ($formats as $format) {
-
                         // Si l'élément est effectivemnt un répertoire et est bien
                         // un format
                         if ($format != "." && $format != ".."
                             && $format != ".svn"
                             && is_dir($docs[$id]["apps"][$key]["versions"][$version]["path"].$format)) {
-
                             // On initialise le tableau du format en question
                             $docs[$id]["apps"][$key]["versions"][$version]["formats"][$format] = array();
 

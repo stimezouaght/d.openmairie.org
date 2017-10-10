@@ -1,12 +1,41 @@
 @media(min-width:980px){
-
 body {
-  padding-top: 60px;
   padding-bottom: 40px;
 }
-
 }
-
+body {
+  padding-left: 0;
+  padding-right: 0;
+}
+.wrap {
+    padding: 0 8px;
+}
+div.openmairie-global-topbar {
+    background-color : #999999;
+    border-bottom: 1px solid #999999;
+    line-height: 19px;
+    color : #ffffff;
+    text-align: center;
+}
+div.openmairie-global-topbar a {
+    color : #ffffff;
+    text-decoration: none;
+}
+a  { color: #88aa00; }
+a.brand img {
+    margin-top: 8px;
+}
+div.header {
+    height: 60px;
+    left: 0;
+    padding-top: 3px;
+    z-index: 1000;
+    background-color: #fff;
+    box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.25);
+    width: 100%;
+    margin-bottom: 15px;
+}
 .cursor-help {
     cursor: help;
 }
+

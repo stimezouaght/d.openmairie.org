@@ -43,7 +43,7 @@ $app_link_label_framework_bloc =
 ';
 $app_link_label_sig_bloc =
 '
-<span class="label label-warning" title="Fonctions de géolocalisation intégrées">
+<span class="label" title="Fonctions de géolocalisation intégrées">
     <!--i class="icon-screenshot"></i-->SIG
 </span>
 ';
@@ -120,7 +120,7 @@ if ($view == "by_category") {
                     if (isset($version["framework"]) && $version["framework"] != "") {
                         $app_link_labels .= sprintf(
                             $app_link_label_framework_bloc,
-                            (strpos($version["framework"], "4.") === false ? "label-default" : "label-info"),
+                            (strpos($version["framework"], "4.") === false ? "label-default" : "label-default"),
                             "OM".$version["framework"]
                         );
                     }
@@ -166,7 +166,7 @@ if ($view == "by_category") {
             if (isset($version["framework"]) && $version["framework"] != "") {
                 $app_link_labels .= sprintf(
                     $app_link_label_framework_bloc,
-                    (strpos($version["framework"], "4.") === false ? "label-default" : "label-info"),
+                    (strpos($version["framework"], "4.") === false ? "label-default" : "label-default"),
                     "OM".$version["framework"]
                 );
             }

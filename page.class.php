@@ -51,19 +51,20 @@ $end_page = "
      */
     function html_header() {
 //
-$header = "
+$header = '
     <head>
-        <meta charset=\"utf-8\">
-        <title>:: openMairie :: %s</title>
-        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
-        <link href=\"theme/css/bootstrap.min.css\" rel=\"stylesheet\" media=\"screen\">
-        <link href=\"theme/css/bootstrap-responsive.min.css\" rel=\"stylesheet\">
-        <link href=\"theme/css/font-awesome.min.css\" rel=\"stylesheet\">
-        <link href=\"theme/css/style.css\" rel=\"stylesheet\">
+        <meta charset="utf-8">
+        <title>%s openMairie</title>
+        <link rel="icon" type="image/png" href="theme/img/a4fc58cc5a7b8f58690ad15e83e3d06ed5d4451f.png">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="theme/css/bootstrap.min.css" rel="stylesheet" media="screen">
+        <link href="theme/css/bootstrap-responsive.min.css" rel="stylesheet">
+        <link href="theme/css/font-awesome.min.css" rel="stylesheet">
+        <link href="theme/css/style.css?v=%s" rel="stylesheet">
     </head>
-";
+';
         //
-        printf($header, $this->html_title);
+        printf($header, $this->html_title, date("Y-m-d"));
     }
 
     /**
@@ -96,40 +97,15 @@ $end_body = "
 
     function navbar() {
 //
-$navbar = "
-    <div class=\"navbar navbar-inverse navbar-fixed-top\">
-        <div class=\"navbar-inner\">
-            <div class=\"container\">
-                <button class=\"btn btn-navbar\" data-target=\".nav-collapse\" data-toggle=\"collapse\" type=\"button\">
-                    <span class=\"icon-bar\"></span>
-                    <span class=\"icon-bar\"></span>
-                    <span class=\"icon-bar\"></span>
-                </button>
-                <a class=\"brand\" href=\".\" title=\"openMairie est le projet logiciel libre des collectivités territoriales\">
-                    <img src=\"theme/img/openmairie.png\" alt=\"openMairie\" />
-                </a>
-                <div class=\"nav-collapse collapse pull-right\">
-                    <ul class=\"nav\">
-                        <li class=\"dropdown\">
-                            <a data-toggle=\"dropdown\" class=\"dropdown-toggle\" href=\"#\">
-                                openMairie.org <b class=\"caret\"></b>
-                            </a>
-                            <ul class=\"dropdown-menu pull-right\">
-                                <li><a href=\"http://www.openmairie.org\"><i class=\"icon-globe\"></i> Portail<br/><small>www.openmairie.org</small></a></li>
-                                <li class=\"divider\"></li>
-                                <li><a href=\"http://demo.openmairie.org\"><i class=\"icon-laptop\"></i> Espace Démonstration<br/><small>demo.openmairie.org</small></a></li>
-                                <li class=\"divider\"></li>
-                                <li><a href=\"http://docs.openmairie.org\"><i class=\"icon-book\"></i> Espace Documentation<br/><small>docs.openmairie.org</small></a></li>
-                                    <li class=\"divider\"></li>
-                                <li><a href=\"http://communaute.openmairie.org\"><i class=\"icon-group\"></i> Forum des Utilisateurs<br/><small>communaute.openmairie.org</small></a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+$navbar = '
+    <div class="header">
+        <div class="container wrap">
+            <a class="brand" href="." title="openMairie est le projet logiciel libre des collectivités territoriales">
+                <img src="theme/img/0bbbc8347ddf1484c69117bb13b5d641b24da943.png" alt="openMairie" />
+            </a>
         </div>
     </div>
-";
+';
         //
         printf($navbar);
 
@@ -141,7 +117,7 @@ $navbar = "
     function start_container() {
 //
 $start_container = "
-    <div class=\"container\">
+    <div class=\"container wrap\">
 ";
         //
         printf($start_container);
@@ -220,10 +196,30 @@ $footer = "
     /**
      *
      */
+    function global_topbar() {
+        printf('
+<div class="openmairie-global-topbar">
+    <div class="container wrap">
+        <div>
+<a href="http://www.openmairie.org">www.openmairie.org</a> |
+<a href="http://demo.openmairie.org">demo.openmairie.org</a> |
+<a href="http://docs.openmairie.org">docs.openmairie.org</a> |
+<a href="http://communaute.openmairie.org">communaute.openmairie.org</a>
+        </div>
+    </div>
+</div>
+        ');
+    }
+
+
+    /**
+     *
+     */
     function start_display() {
         $this->start_page();
         $this->html_header();
         $this->start_body();
+        $this->global_topbar();
         $this->navbar();
         $this->start_container();
         $this->title();

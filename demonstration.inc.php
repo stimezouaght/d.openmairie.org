@@ -122,6 +122,24 @@ le transfert à l'insee des nouvelles inscription et bien plus encore.",
 );
 
 //
+$demos["openmarcheforain"] = array(
+    "title" => "openMarchéForain",
+    "description" => "openMarchéForain est un logiciel libre permettant la gestion des Commerçants non sédentaires sur les marchés forains.",
+    "categories" => array(
+    ),
+    "versions" => array(
+        "2.3" => array(
+            "title" => "2.3.0",
+            "framework" => "4.6.3",
+            "href" => "a/openmarcheforain/2.3",
+            "autoinstall" => true,
+            "svn" => "svn://scm.adullact.net/svn/openmarchefor/tags/2.3.0",
+            "db" => "pgsql",
+        ),
+    ),
+);
+
+//
 $demos["openresultat"] = array(
     "title" => "openRésultat",
     "description" => "openRésultat permet la gestion des résultats électoraux lors de soirées

@@ -135,6 +135,7 @@ $demos["openmarcheforain"] = array(
             "autoinstall" => true,
             "svn" => "svn://scm.adullact.net/svn/openmarchefor/tags/2.3.0",
             "db" => "pgsql",
+            "schema" => "openmf",
         ),
     ),
 );

@@ -129,11 +129,11 @@ $demos["openmarcheforain"] = array(
     ),
     "versions" => array(
         "2.3" => array(
-            "title" => "2.3.1",
+            "title" => "2.3.2",
             "framework" => "4.6.3",
             "href" => "a/openmarcheforain/2.3",
             "autoinstall" => true,
-            "svn" => "svn://scm.adullact.net/svn/openmarchefor/tags/2.3.1",
+            "svn" => "svn://scm.adullact.net/svn/openmarchefor/tags/2.3.2",
             "db" => "pgsql",
             "schema" => "openmf",
         ),

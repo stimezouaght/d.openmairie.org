@@ -19,12 +19,12 @@ et bien plus encore.",
         "Urbanisme",
     ),
     "versions" => array(
-        "4.4" => array(
-            "title" => "4.4.0",
-            "framework" => "4.6",
-            "href" => "a/openads/4.4",
+        "4.5" => array(
+            "title" => "4.5.0",
+            "framework" => "4.6.3",
+            "href" => "a/openads/4.5",
             "autoinstall" => true,
-            "svn" => "svn://scm.adullact.net/svn/openfoncier/tags/4.4.0",
+            "svn" => "svn://scm.adullact.net/svn/openfoncier/tags/4.5.0",
             "db" => "pgsql",
         ),
     ),

@@ -182,8 +182,7 @@ $footer = "
         <hr/>
 
         <footer>
-            <p>&copy; openMairie 2004-%s - <a href=\"http://www.openmairie.org\">openMairie.org</a>
-            <small><span class=\"muted\">- Cet espace est hébergé par <a target=\"_blank\" href=\"http://www.atreal.fr/\">atReal</a></span></small></p>
+            <p>&copy; openMairie 2004-%s - <a href=\"http://www.openmairie.org\">openMairie.org</a></p>
         </footer>
 ";
         //
@@ -201,10 +200,10 @@ $footer = "
 <div class="openmairie-global-topbar">
     <div class="container wrap">
         <div>
-<a href="http://www.openmairie.org">www.openmairie.org</a> |
-<a href="http://demo.openmairie.org">demo.openmairie.org</a> |
-<a href="http://docs.openmairie.org">docs.openmairie.org</a> |
-<a href="http://communaute.openmairie.org">communaute.openmairie.org</a>
+<a href="http://www.openmairie.org">openMairie.org</a> |
+<a href="http://demo.openmairie.org">Démonstration</a> |
+<a href="http://docs.openmairie.org">Documentation</a> |
+<a href="http://communaute.openmairie.org">Forum</a>
         </div>
     </div>
 </div>

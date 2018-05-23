@@ -36,6 +36,12 @@ $docs["applications"] = array(
             "source_type" => "github",
         ),
         array(
+            "id" => "opendebitdeboisson",
+            "type" => "readthedocs",
+            "source_url" => "https://github.com/openmairie/opendebitdeboisson-documentation",
+            "source_type" => "github",
+        ),
+        array(
             "id" => "openelec",
             "type" => "readthedocs",
             "source_url" => "https://github.com/openmairie/openelec-documentation",

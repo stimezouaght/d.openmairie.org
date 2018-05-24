@@ -196,6 +196,33 @@ class om_documentation {
         }
     }
 
+    function get_latest_version($project) {
+        //
+        if (!$this->is_project_exists($project)) {
+            $this->log("le projet n'existe pas");
+            return false;
+        }
+        //
+        if ($project == "framework") {
+            //
+            foreach ($this->_config["framework"]["apps"] as $app) {
+                if ($app["id"] == "omframework") {
+                    $versions = array_keys($app["versions"]);
+                    return $versions[0];
+                }
+            }
+        }
+        //
+        foreach ($this->_config["applications"]["apps"] as $app) {
+            if ($app["id"] == $project) {
+                $versions = array_keys($app["versions"]);
+                return $versions[0];
+            }
+        }
+        //
+        return "latest";
+    }
+
     function manage_direct_link($params = array()) {
         //
         if (!isset($params["project"])) {
@@ -210,7 +237,7 @@ class om_documentation {
         //
         if (!isset($params["version"])) {
             // On prend la dernière version
-            $params["version"] = "latest";
+            $params["version"] = $this->get_latest_version($params["project"]);
         }
         //
         if (!$this->is_version_exists($params["project"], $params["version"])) {

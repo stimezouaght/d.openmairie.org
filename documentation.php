@@ -447,7 +447,7 @@ foreach ($docs as $id => $rubrik) {
 }
 
 //
-echo "<script src=\"http://docs.openmairie.org/docs.stats.js\"></script>";
+echo "<script src=\"https://docs.openmairie.org/docs.stats.js\"></script>";
 
 //
 $page->end_display();

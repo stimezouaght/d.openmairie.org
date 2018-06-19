@@ -98,6 +98,31 @@ organisation avec possibilité d'affecter des tâches et bien plus encore.",
 );
 
 //
+$demos["opendebitdeboisson"] = array(
+    "title" => "openDébitDeBoisson",
+    "description" => "openDébitDeBoisson est destiné au service de demandes de débit de boisson et a
+pour objectif de gérer les demandes de licences de débit de boisson en tenant
+compte : des périmètres d'exclusion, du type de demande de licence, de la
+géolocalisation de l'établissement, des établissements environnants ayant une
+même licence, des dates de demande de licence, des document fournis, générer
+les récépissés de ces même demandes et bien plus encore...",
+    "categories" => array(
+        "Population",
+    ),
+    "versions" => array(
+        "2.0" => array(
+            "title" => "2.0.0 (dev)",
+            "framework" => "4.9.0 (dev)",
+            "sig" => true,
+            "href" => "a/opendebitdeboisson/2.0",
+            "autoinstall" => true,
+            "svn" => "svn://scm.adullact.net/svn/opendebitdeboisson/branches/2.0.0-develop",
+            "db" => "pgsql",
+        ),
+    ),
+);
+
+//
 $demos["openelec"] = array(
     "title" => "openElec",
     "description" => "openElec est un logiciel de gestion des listes électorales. Il permet la

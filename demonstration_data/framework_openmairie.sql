@@ -181,4 +181,4 @@ window.chartColors = {
 INSERT INTO om_dashboard VALUES (nextval('om_dashboard_seq'), 1, 'C1', 1, (SELECT om_widget FROM om_widget WHERE libelle='Ma carte'));
 INSERT INTO om_dashboard VALUES (nextval('om_dashboard_seq'), 1, 'C2', 1, (SELECT om_widget FROM om_widget WHERE libelle='Lorem ipsum'));
 INSERT INTO om_dashboard VALUES (nextval('om_dashboard_seq'), 1, 'C2', 2, (SELECT om_widget FROM om_widget WHERE libelle='Lorem ipsum'));
-INSERT INTO om_dashboard VALUES (nextval('om_dashboard_seq'), 1, 'C3', 1, (SELECT om_widget FROM om_widget WHERE libelle='Statistiques');
+INSERT INTO om_dashboard VALUES (nextval('om_dashboard_seq'), 1, 'C3', 1, (SELECT om_widget FROM om_widget WHERE libelle='Statistiques'));

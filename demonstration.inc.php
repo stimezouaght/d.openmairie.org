@@ -208,4 +208,28 @@ délégués pour les élections politiques et bien plus encore.",
     ),
 );
 
+
+//
+$demos["framework_openmairie"] = array(
+    "title" => "Framework openMairie",
+    "description" => "Le framework openMairie est une librairie PHP qui permet de créer une
+application très rapidement en générant, à partir du modèle de données, des
+formulaires, des listings, des éditions PDF, des affichages sur carte et bien
+plus encore...",
+    "categories" => array(
+        "Développement",
+    ),
+    "versions" => array(
+        "4.9" => array(
+            "title" => "4.9.0 (dev)",
+            "framework" => "4.9",
+            "href" => "a/framework_openmairie/4.9",
+            "autoinstall" => true,
+            "svn" => "svn://scm.adullact.net/svn/openmairie/openmairie_exemple/branches/4.9.0-develop",
+            "db" => "pgsql",
+            "sig" => true,
+        ),
+    ),
+);
+
 ?>

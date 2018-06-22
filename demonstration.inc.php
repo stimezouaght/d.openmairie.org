@@ -112,7 +112,7 @@ les récépissés de ces même demandes et bien plus encore...",
     "versions" => array(
         "2.0" => array(
             "title" => "2.0.0 (dev)",
-            "framework" => "4.9.0 (dev)",
+            "framework" => "4.9",
             "sig" => true,
             "href" => "a/opendebitdeboisson/2.0",
             "autoinstall" => true,

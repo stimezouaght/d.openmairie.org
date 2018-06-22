@@ -13,7 +13,7 @@ delete from om_droit where libelle='password';
 -- 
 --
 INSERT INTO om_parametre VALUES (nextval('om_parametre_seq'), 'option_localisation', 'sig_interne', 1);
-INSERT INTO om_sig_extent VALUES (nextval('om_sig_extent'), 'LIBREVILLE', '5.3588,43.6203,5.7107,43.7661', true);
+INSERT INTO om_sig_extent VALUES (nextval('om_sig_extent_seq'), 'LIBREVILLE', '5.3588,43.6203,5.7107,43.7661', true);
 INSERT INTO om_sig_flux VALUES (nextval('om_sig_flux_seq'), 'Cadastre', 1, 'cadastre', NULL, 'http://inspire.cadastre.gouv.fr/scpc/84089.wms?service=WMS&request=GetMap&VERSION=1.3&CRS=EPSG:3857&', 'AMORCES_CAD,LIEUDIT,CP.CadastralParcel,SUBFISCAL,CLOTURE,DETAIL_TOPO,HYDRO,VOIE_COMMUNICATION,BU.Building,BORNE_REPERE', NULL, NULL, NULL);
 INSERT INTO om_sig_flux VALUES (nextval('om_sig_flux_seq'), 'Cadastre - section', 1, 'cadastre_section', NULL, 'http://inspire.cadastre.gouv.fr/scpc/84089.wms?service=WMS&request=GetMap&VERSION=1.3&CRS=EPSG:3857&', 'AMORCES_CAD', NULL, NULL, NULL);
 INSERT INTO om_sig_map VALUES (nextval('om_sig_map_seq'), 1, 'carte_flux_generique', 'Carte pour flux génériques', false, '0', true, false, false, false, 'EPSG:2154', '...', '...', '...', false, false, false, NULL, 'osm', (SELECT om_sig_extent FROM om_sig_extent WHERE nom='LIBREVILLE'), true, NULL, NULL, NULL);

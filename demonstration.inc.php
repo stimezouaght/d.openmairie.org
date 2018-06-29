@@ -38,12 +38,12 @@ $demos["openaria"] = array(
         "Urbanisme",
     ),
     "versions" => array(
-        "1.3" => array(
-            "title" => "1.3.0",
-            "framework" => "4.7",
-            "href" => "a/openaria/1.3",
+        "1.4" => array(
+            "title" => "1.4.0",
+            "framework" => "4.8",
+            "href" => "a/openaria/1.4",
             "autoinstall" => true,
-            "svn" => "svn://scm.adullact.net/svn/openaria/tags/1.3.0",
+            "svn" => "svn://scm.adullact.net/svn/openaria/tags/1.4.0",
             "db" => "pgsql",
         ),
     ),

@@ -221,11 +221,11 @@ plus encore...",
     ),
     "versions" => array(
         "4.9" => array(
-            "title" => "4.9.0 (dev)",
+            "title" => "4.9.0",
             "framework" => "4.9",
             "href" => "a/framework_openmairie/4.9",
             "autoinstall" => true,
-            "svn" => "svn://scm.adullact.net/svn/openmairie/openmairie_exemple/branches/4.9.0-develop",
+            "svn" => "svn://scm.adullact.net/svn/openmairie/openmairie_exemple/tags/4.9.0",
             "db" => "pgsql",
             "sig" => true,
         ),

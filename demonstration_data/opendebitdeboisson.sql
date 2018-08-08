@@ -1,4 +1,7 @@
 --
+\i tests/data/pgsql/install_tests.sql
+
+--
 SET search_path = opendebitdeboisson, public, pg_catalog;
 
 --

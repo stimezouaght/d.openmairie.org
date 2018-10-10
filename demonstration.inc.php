@@ -134,14 +134,13 @@ le transfert à l'insee des nouvelles inscription et bien plus encore.",
         "Population",
     ),
     "versions" => array(
-        "4.4" => array(
-            "title" => "4.4.3",
-            "framework" => "4.1.13",
-            "href" => "a/openelec/4.4",
+        "5.0" => array(
+            "title" => "5.0.0 (dev)",
+            "framework" => "4.9",
+            "href" => "a/openelec/5.0",
             "autoinstall" => true,
-            "svn" => "svn://scm.adullact.net/svn/openelec/tags/4.4.3",
+            "svn" => "svn://scm.adullact.net/svn/openelec/trunk",
             "db" => "pgsql",
-            "schema" => "public",
         ),
     ),
 );

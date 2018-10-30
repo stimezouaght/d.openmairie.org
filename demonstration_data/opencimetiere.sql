@@ -1,4 +1,7 @@
 --
+\i tests/data/pgsql/install_tests.sql
+
+--
 SET search_path = opencimetiere, public, pg_catalog;
 
 --

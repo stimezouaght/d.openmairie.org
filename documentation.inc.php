@@ -128,7 +128,7 @@ foreach ($docs as $id => $rubrik) {
             // Récupération des infos sur le projet sur ReadTheDocs.org
             if (!file_exists($filename_project_infos) || $refresh === true) {
                 //
-                $ch = curl_init("http://readthedocs.org/api/v1/project/".$app["id"]."/?format=json");
+                $ch = curl_init("https://readthedocs.org/api/v2/project/?slug=".$app["id"]."");
                 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
                 $response = curl_exec($ch);
                 curl_close($ch);
@@ -144,11 +144,12 @@ foreach ($docs as $id => $rubrik) {
             }
             //
             $project_infos = json_decode($response);
+            $project_infos = $project_infos->{'results'}[0];
 
             // Récupération des infos sur les différentes versions du projet
             // su ReadTheDocs.org
             if (!file_exists($filename_project_versions_infos) || $refresh === true) {
-                $ch = curl_init("http://readthedocs.org/api/v1/version/".$app["id"]."/?format=json");
+                $ch = curl_init("https://readthedocs.org/api/v2/project/".$project_infos->{"id"}."/active_versions/");
                 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
                 $response = curl_exec($ch);
                 curl_close($ch);
@@ -180,7 +181,7 @@ foreach ($docs as $id => $rubrik) {
             //
             $versions = array();
             //
-            foreach ($project_versions_infos->{'objects'} as $value) {
+            foreach ($project_versions_infos->{'versions'} as $value) {
                 //
                 if ($value->{'active'} == '1') {
                     //

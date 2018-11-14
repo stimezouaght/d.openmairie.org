@@ -8,13 +8,13 @@ SET search_path = openafficheur, public, pg_catalog;
 -- Utilisateur super renommé demo
 UPDATE om_utilisateur 
 SET login = 'demo'
-   , passwd = 'fe01ce2a7fbac8fafaed7c982a04e229'
+   , pwd = 'fe01ce2a7fbac8fafaed7c982a04e229'
 WHERE login = 'super'
 ;
 
 -- Mot de passe générique supprimé pour les autres comptes
 UPDATE om_utilisateur 
-SET passwd = '6a2da2d17406bef69671c5a1ef2dde7f'
+SET pwd = '6a2da2d17406bef69671c5a1ef2dde7f'
     , email = 'nospam@openmairie.org'
 WHERE login != 'demo';
 

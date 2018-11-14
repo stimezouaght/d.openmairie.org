@@ -8,6 +8,27 @@
 $demos = array();
 
 //
+$demos["openafficheur"] = array(
+    "title" => "openAfficheur",
+    "description" => "openAfficheur assure le recensement et la facturation des dispositifs 
+    des afficheurs pour la Taxe sur la Publicité Extérieure et le loyer. openAfficheur propose
+    une approche simple.",
+    "categories" => array(
+        "Urbanisme",
+    ),
+    "versions" => array(
+        "1.0" => array(
+            "title" => "1.0.1",
+            "framework" => "4.9.0",
+            "href" => "a/openafficheur/1.0",
+            "autoinstall" => true,
+            "svn" => "svn://scm.adullact.net/svn/openafficheur/tags/1.0.1",
+            "db" => "pgsql",
+        ),
+    ),
+);
+
+//
 $demos["openads"] = array(
     "title" => "openADS",
     "description" => "openADS est un logiciel libre de gestion de l'urbanisme. Il permet le suivi de

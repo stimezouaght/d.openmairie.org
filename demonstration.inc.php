@@ -31,6 +31,27 @@ et bien plus encore.",
 );
 
 //
+$demos["openafficheur"] = array(
+    "title" => "openAfficheur",
+    "description" => "openAfficheur assure le recensement et la facturation des dispositifs 
+    des afficheurs pour la Taxe sur la Publicité Extérieure et le loyer. openAfficheur propose
+    une approche simple.",
+    "categories" => array(
+        "Urbanisme",
+    ),
+    "versions" => array(
+        "1.0" => array(
+            "title" => "1.0.1",
+            "framework" => "4.9.0",
+            "href" => "a/openafficheur/1.0",
+            "autoinstall" => true,
+            "svn" => "svn://scm.adullact.net/svn/openafficheur/tags/1.0.1",
+            "db" => "pgsql",
+        ),
+    ),
+);
+
+//
 $demos["openaria"] = array(
     "title" => "openARIA",
     "description" => "openARIA est un logiciel libre permettant l'Analyse du Risque Incendie et de l'Accessibilité pour les Établissements Recevant du Public (ERP).",

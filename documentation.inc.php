@@ -12,6 +12,12 @@ $docs["applications"] = array(
     "title" => "Applications",
     "apps" => array(
         array(
+            "id" => "openafficheur",
+            "type" => "readthedocs",
+            "source_url" => "https://github.com/openmairie/openafficheur-documentation",
+            "source_type" => "github",
+        ),
+        array(
             "id" => "openads",
             "type" => "readthedocs",
             "source_url" => "https://github.com/openmairie/openads-documentation",

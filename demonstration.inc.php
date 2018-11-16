@@ -41,11 +41,11 @@ $demos["openafficheur"] = array(
     ),
     "versions" => array(
         "1.0" => array(
-            "title" => "1.0.1",
+            "title" => "1.0.2",
             "framework" => "4.9.0",
             "href" => "a/openafficheur/1.0",
             "autoinstall" => true,
-            "svn" => "svn://scm.adullact.net/svn/openafficheur/tags/1.0.1",
+            "svn" => "svn://scm.adullact.net/svn/openafficheur/tags/1.0.2",
             "db" => "pgsql",
         ),
     ),

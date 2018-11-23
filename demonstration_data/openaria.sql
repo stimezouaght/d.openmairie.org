@@ -25,11 +25,6 @@ INSERT INTO acteur (acteur, nom_prenom, om_utilisateur, service, role, acronyme,
      (SELECT service FROM service WHERE code = 'SI'),
      'cadre', 'LDA', NULL, NULL, NULL, NULL
     );
-INSERT INTO om_dashboard (om_dashboard, om_profil, bloc, position, om_widget)
-    SELECT 
-        nextval('om_dashboard_seq'), (SELECT om_profil FROM om_profil WHERE libelle = 'ADMINISTRATEUR'), bloc, position, om_widget
-    FROM om_dashboard
-    WHERE om_profil IN (SELECT om_profil FROM om_profil WHERE libelle = 'CADRE SI');
 
 --
 delete from om_droit where libelle='password';

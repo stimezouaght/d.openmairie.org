@@ -258,6 +258,15 @@ plus encore...",
             "db" => "pgsql",
             "sig" => true,
         ),
+        "4.10" => array(
+            "title" => "4.10.0 (dev)",
+            "framework" => "4.10",
+            "href" => "a/framework_openmairie/4.10",
+            "autoinstall" => true,
+            "svn" => "svn://scm.adullact.net/svn/openmairie/openmairie_exemple/branches/4.10.0-develop",
+            "db" => "pgsql",
+            "sig" => true,
+        ),
     ),
 );
 

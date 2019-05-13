@@ -287,10 +287,20 @@ class om_documentation {
 
     function url_exists($url = "") {
         //
-        $file_headers = @get_headers($url);
+        $file_headers = @get_headers($url, 1);
         //
-        if ($file_headers[0] == 'HTTP/1.1 404 Not Found'
-            || $file_headers[0] == 'HTTP/1.1 404 NOT FOUND') {
+        if (array_key_exists("Date", $file_headers) === true
+            && is_array($file_headers["Date"]) === true
+            && count($file_headers["Date"]) == 3
+            && array_key_exists(2, $file_headers) === true
+            && ($file_headers[2] == 'HTTP/1.1 404 Not Found' || $file_headers[2] == 'HTTP/1.1 404 NOT FOUND')
+        ) {
+            //
+            return false;
+        } elseif ($file_headers[0] == 'HTTP/1.1 404 Not Found'
+            || $file_headers[0] == 'HTTP/1.1 404 NOT FOUND'
+        ) {
+            //
             return false;
         } else {
             return true;

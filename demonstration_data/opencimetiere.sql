@@ -16,6 +16,6 @@ delete from om_droit where libelle LIKE 'om_collectivite%';
 delete from om_droit where libelle LIKE 'om_utilisateur%';
 delete from om_droit where libelle LIKE 'om_profil%';
 delete from om_droit where libelle LIKE 'om_droit%';
-delete from om_droit where libelle LIKE 'om_sousetat%';
-delete from om_droit where libelle LIKE 'om_requete%';
+delete from om_droit where libelle LIKE 'om_sousetat%' AND libelle <> 'om_sousetat_consulter';
+delete from om_droit where libelle LIKE 'om_requete%' AND libelle <> 'om_requete_consulter';
 																       

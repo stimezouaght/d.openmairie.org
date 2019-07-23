@@ -140,13 +140,13 @@ les récépissés de ces même demandes et bien plus encore...",
         "Population",
     ),
     "versions" => array(
-        "2.0" => array(
-            "title" => "2.0.0",
+        "2.1" => array(
+            "title" => "2.1.0",
             "framework" => "4.9",
             "sig" => true,
-            "href" => "a/opendebitdeboisson/2.0",
+            "href" => "a/opendebitdeboisson/2.1",
             "autoinstall" => true,
-            "svn" => "svn://scm.adullact.net/svn/openboisson/tags/2.0.0",
+            "svn" => "svn://scm.adullact.net/svn/openboisson/tags/2.1.0",
             "db" => "pgsql",
         ),
     ),
